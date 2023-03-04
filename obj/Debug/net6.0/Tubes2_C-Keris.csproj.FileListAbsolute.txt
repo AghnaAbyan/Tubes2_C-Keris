@@ -1,0 +1,15 @@
+D:\GitHub\Tubes2_C-Keris\bin\Debug\net6.0\Tubes2_C-Keris.exe
+D:\GitHub\Tubes2_C-Keris\bin\Debug\net6.0\Tubes2_C-Keris.deps.json
+D:\GitHub\Tubes2_C-Keris\bin\Debug\net6.0\Tubes2_C-Keris.runtimeconfig.json
+D:\GitHub\Tubes2_C-Keris\bin\Debug\net6.0\Tubes2_C-Keris.dll
+D:\GitHub\Tubes2_C-Keris\bin\Debug\net6.0\Tubes2_C-Keris.pdb
+D:\GitHub\Tubes2_C-Keris\obj\Debug\net6.0\Tubes2_C-Keris.csproj.AssemblyReference.cache
+D:\GitHub\Tubes2_C-Keris\obj\Debug\net6.0\Tubes2_C-Keris.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\Tubes2_C-Keris\obj\Debug\net6.0\Tubes2_C-Keris.AssemblyInfoInputs.cache
+D:\GitHub\Tubes2_C-Keris\obj\Debug\net6.0\Tubes2_C-Keris.AssemblyInfo.cs
+D:\GitHub\Tubes2_C-Keris\obj\Debug\net6.0\Tubes2_C-Keris.csproj.CoreCompileInputs.cache
+D:\GitHub\Tubes2_C-Keris\obj\Debug\net6.0\Tubes2_C-Keris.dll
+D:\GitHub\Tubes2_C-Keris\obj\Debug\net6.0\refint\Tubes2_C-Keris.dll
+D:\GitHub\Tubes2_C-Keris\obj\Debug\net6.0\Tubes2_C-Keris.pdb
+D:\GitHub\Tubes2_C-Keris\obj\Debug\net6.0\Tubes2_C-Keris.genruntimeconfig.cache
+D:\GitHub\Tubes2_C-Keris\obj\Debug\net6.0\ref\Tubes2_C-Keris.dll
