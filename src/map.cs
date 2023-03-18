@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Text;
 
 namespace map{
     class Map{
@@ -9,6 +10,7 @@ namespace map{
         /* default ctor */
         public Map(){
             N = 0;
+            data = new char[1,1];
         }
 
         /* ctor with parameter */
@@ -40,12 +42,15 @@ namespace map{
         
         /* buat map dari file */
         public void makeMap(string filename){
-            string[] lns = File.ReadAllLines(filename);
-            setN(lns.Length);
+            int n = 0;
+            foreach (string line in System.IO.File.ReadLines(filename)){
+                n++;
+            }
+            setN(n);
             int i = 0;
-            foreach(string ln in lns){
+            foreach (string line in System.IO.File.ReadLines(filename)){
                 int j = 0;
-                foreach(char c in ln){
+                foreach(char c in line){
                     if(c != ' '){
                         data[i,j] = c;
                         j++;
@@ -66,7 +71,7 @@ namespace map{
 
         public static void Main(){
             Map m = new Map();
-            m.makeMap("exMap.txt");
+            m.makeMap("D:\\GitHub\\Tubes2_C-Keris\\test\\exMap.txt");
             m.printMap();
         }
     }
