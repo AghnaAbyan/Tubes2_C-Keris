@@ -43,12 +43,12 @@ namespace map{
         /* buat map dari file */
         public void makeMap(string filename){
             int n = 0;
-            foreach (string line in System.IO.File.ReadLines(filename)){
+            foreach (string line in System.IO.File.ReadLines("test\\" + filename)){
                 n++;
             }
             setN(n);
             int i = 0;
-            foreach (string line in System.IO.File.ReadLines(filename)){
+            foreach (string line in System.IO.File.ReadLines("test\\" + filename)){
                 int j = 0;
                 foreach(char c in line){
                     if(c != ' '){
@@ -71,7 +71,7 @@ namespace map{
 
         public static void Main(){
             Map m = new Map();
-            m.makeMap("D:\\GitHub\\Tubes2_C-Keris\\test\\exMap.txt");
+            m.makeMap("exMap.txt");
             m.printMap();
         }
     }
