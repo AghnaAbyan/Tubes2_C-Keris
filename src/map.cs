@@ -60,6 +60,17 @@ namespace map{
             return get(i,j) == 'X';
         }
 
+        public int countTreasure(){
+            int count = 0;
+            for(int i=0; i< N; i++){
+                for(int j=0; j<N; j++){
+                    if (isTreasure(i,j)){
+                        count++;
+                    }
+                }
+            }
+            return count;
+        }
         public (int, int) startPoint(){
             int i;
             int j;
@@ -81,6 +92,42 @@ namespace map{
                 }
             }
             return (i,j);
+        }
+
+        public (int,int) getUp(int i, int j) {
+            if(i==0){
+                return (-1,-1);
+            }
+            else{
+                return (i-1,j);
+            }
+        }
+
+        public (int,int) getRight(int i, int j) {
+            if(j==N-1){
+                return (-1,-1);
+            }
+            else{
+                return (i,j+1);
+            }
+        }
+
+        public (int,int) getDown(int i, int j) {
+            if(i==N-1){
+                return (-1,-1);
+            }
+            else{
+                return (i+1,j);
+            }
+        }
+
+        public (int,int) getLeft(int i, int j) {
+            if(j==0){
+                return (-1,-1);
+            }
+            else{
+                return (i,j-1);
+            }
         }
         
         /* buat map dari file */
@@ -116,6 +163,20 @@ namespace map{
             Map m = new Map();
             m.makeMap("exMap.txt");
             m.printMap();
+            Bfs resultBFS = new Bfs("exMap.txt");
+            Console.WriteLine("=======================BFS=======================");
+            Console.Write("Terdapat ");
+            Console.Write(resultBFS.getTreasure());
+            Console.WriteLine(" treasure yang ditemukan yaitu");
+            resultBFS.bfsSearch();
+
+            Console.WriteLine("Treasure: ");
+            resultBFS.displayTreasure();
+            Console.Write("Terdapat ");
+            Console.Write(resultBFS.gettotalPath());
+            Console.WriteLine(" titik yang diperiksa yaitu");
+            Console.WriteLine("Path: ");
+            resultBFS.displayPath();
         }
     }
 }
