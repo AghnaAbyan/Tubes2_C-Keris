@@ -43,6 +43,22 @@ namespace map{
         public int getN(){
             return N;
         }
+
+        public bool isTreasure(int i, int j){
+            return get(i,j) == 'T';
+        }
+
+        public bool isStart(int i, int j){
+            return get(i,j) == 'K';
+        }
+
+        public bool isJalan(int i, int j){
+            return get(i,j) == 'R' || get(i,j) ==  'T' || get(i,j) == 'K';
+        }
+
+        public bool isNotJalan(int i, int j){
+            return get(i,j) == 'X';
+        }
         
         /* buat map dari file */
         public void makeMap(string filename){
