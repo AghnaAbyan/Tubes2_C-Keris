@@ -35,6 +35,10 @@ namespace map{
             }
         }
 
+        public char get(int i, int j){
+            return data[i,j];
+        }
+
         /* return nilai N */
         public int getN(){
             return N;
