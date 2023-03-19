@@ -59,6 +59,29 @@ namespace map{
         public bool isNotJalan(int i, int j){
             return get(i,j) == 'X';
         }
+
+        public (int, int) startPoint(){
+            int i;
+            int j;
+            i = 0;
+            j = 0;
+            bool found = false;
+            while(i < N && !found){
+                j = 0;
+                while(j < N && !found){
+                    if (isStart(i,j)){
+                        found = true;
+                    }
+                    if (!found){
+                        j++;
+                    }
+                }
+                if (!found){
+                    i++;
+                }
+            }
+            return (i,j);
+        }
         
         /* buat map dari file */
         public void makeMap(string filename){
