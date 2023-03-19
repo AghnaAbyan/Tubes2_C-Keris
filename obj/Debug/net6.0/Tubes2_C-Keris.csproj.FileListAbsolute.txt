@@ -13,3 +13,18 @@ D:\GitHub\Tubes2_C-Keris\obj\Debug\net6.0\refint\Tubes2_C-Keris.dll
 D:\GitHub\Tubes2_C-Keris\obj\Debug\net6.0\Tubes2_C-Keris.pdb
 D:\GitHub\Tubes2_C-Keris\obj\Debug\net6.0\Tubes2_C-Keris.genruntimeconfig.cache
 D:\GitHub\Tubes2_C-Keris\obj\Debug\net6.0\ref\Tubes2_C-Keris.dll
+C:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\bin\Debug\net6.0\Tubes2_C-Keris.exe
+c:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\bin\Debug\net6.0\Tubes2_C-Keris.deps.json
+c:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\bin\Debug\net6.0\Tubes2_C-Keris.runtimeconfig.json
+C:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\bin\Debug\net6.0\Tubes2_C-Keris.dll
+C:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\bin\Debug\net6.0\Tubes2_C-Keris.pdb
+C:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\obj\Debug\net6.0\Tubes2_C-Keris.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\obj\Debug\net6.0\Tubes2_C-Keris.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\obj\Debug\net6.0\Tubes2_C-Keris.AssemblyInfoInputs.cache
+C:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\obj\Debug\net6.0\Tubes2_C-Keris.AssemblyInfo.cs
+C:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\obj\Debug\net6.0\Tubes2_C-Keris.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\obj\Debug\net6.0\Tubes2_C-Keris.dll
+C:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\obj\Debug\net6.0\refint\Tubes2_C-Keris.dll
+C:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\obj\Debug\net6.0\Tubes2_C-Keris.pdb
+c:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\obj\Debug\net6.0\Tubes2_C-Keris.genruntimeconfig.cache
+c:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\obj\Debug\net6.0\ref\Tubes2_C-Keris.dll
