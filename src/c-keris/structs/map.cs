@@ -133,12 +133,12 @@ namespace ckeris.structs{
         /* buat map dari file */
         public void makeMap(string filename){
             int n = 0;
-            foreach (string line in System.IO.File.ReadLines("test\\" + filename)){
+            foreach (string line in System.IO.File.ReadLines("..\\..\\test\\" + filename)){
                 n++;
             }
             setN(n);
             int i = 0;
-            foreach (string line in System.IO.File.ReadLines("test\\" + filename)){
+            foreach (string line in System.IO.File.ReadLines("..\\..\\test\\" + filename)){
                 int j = 0;
                 foreach(char c in line){
                     if(c != ' '){

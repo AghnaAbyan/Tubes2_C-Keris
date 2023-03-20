@@ -1,0 +1,10 @@
+D:\GitHub\Tubes2_C-Keris\bin\Debug\c-keris.exe.config
+D:\GitHub\Tubes2_C-Keris\bin\Debug\c-keris.exe
+D:\GitHub\Tubes2_C-Keris\bin\Debug\c-keris.pdb
+D:\GitHub\Tubes2_C-Keris\src\c-keris\obj\Debug\c-keris.csproj.AssemblyReference.cache
+D:\GitHub\Tubes2_C-Keris\src\c-keris\obj\Debug\ckeris.Form1.resources
+D:\GitHub\Tubes2_C-Keris\src\c-keris\obj\Debug\ckeris.Properties.Resources.resources
+D:\GitHub\Tubes2_C-Keris\src\c-keris\obj\Debug\c-keris.csproj.GenerateResource.cache
+D:\GitHub\Tubes2_C-Keris\src\c-keris\obj\Debug\c-keris.csproj.CoreCompileInputs.cache
+D:\GitHub\Tubes2_C-Keris\src\c-keris\obj\Debug\c-keris.exe
+D:\GitHub\Tubes2_C-Keris\src\c-keris\obj\Debug\c-keris.pdb
