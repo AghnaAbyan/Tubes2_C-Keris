@@ -28,3 +28,18 @@ C:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritm
 C:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\obj\Debug\net6.0\Tubes2_C-Keris.pdb
 c:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\obj\Debug\net6.0\Tubes2_C-Keris.genruntimeconfig.cache
 c:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\obj\Debug\net6.0\ref\Tubes2_C-Keris.dll
+C:\Users\MSI\OneDrive\Dokumen\Kuliah\Kuliah Semester 4\Strategi Algoritma\DicarryKevin\bin\Debug\net6.0\Tubes2_C-Keris.exe
+C:\Users\MSI\OneDrive\Dokumen\Kuliah\Kuliah Semester 4\Strategi Algoritma\DicarryKevin\bin\Debug\net6.0\Tubes2_C-Keris.deps.json
+C:\Users\MSI\OneDrive\Dokumen\Kuliah\Kuliah Semester 4\Strategi Algoritma\DicarryKevin\bin\Debug\net6.0\Tubes2_C-Keris.runtimeconfig.json
+C:\Users\MSI\OneDrive\Dokumen\Kuliah\Kuliah Semester 4\Strategi Algoritma\DicarryKevin\bin\Debug\net6.0\Tubes2_C-Keris.dll
+C:\Users\MSI\OneDrive\Dokumen\Kuliah\Kuliah Semester 4\Strategi Algoritma\DicarryKevin\bin\Debug\net6.0\Tubes2_C-Keris.pdb
+C:\Users\MSI\OneDrive\Dokumen\Kuliah\Kuliah Semester 4\Strategi Algoritma\DicarryKevin\obj\Debug\net6.0\Tubes2_C-Keris.csproj.AssemblyReference.cache
+C:\Users\MSI\OneDrive\Dokumen\Kuliah\Kuliah Semester 4\Strategi Algoritma\DicarryKevin\obj\Debug\net6.0\Tubes2_C-Keris.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MSI\OneDrive\Dokumen\Kuliah\Kuliah Semester 4\Strategi Algoritma\DicarryKevin\obj\Debug\net6.0\Tubes2_C-Keris.AssemblyInfoInputs.cache
+C:\Users\MSI\OneDrive\Dokumen\Kuliah\Kuliah Semester 4\Strategi Algoritma\DicarryKevin\obj\Debug\net6.0\Tubes2_C-Keris.AssemblyInfo.cs
+C:\Users\MSI\OneDrive\Dokumen\Kuliah\Kuliah Semester 4\Strategi Algoritma\DicarryKevin\obj\Debug\net6.0\Tubes2_C-Keris.csproj.CoreCompileInputs.cache
+C:\Users\MSI\OneDrive\Dokumen\Kuliah\Kuliah Semester 4\Strategi Algoritma\DicarryKevin\obj\Debug\net6.0\Tubes2_C-Keris.dll
+C:\Users\MSI\OneDrive\Dokumen\Kuliah\Kuliah Semester 4\Strategi Algoritma\DicarryKevin\obj\Debug\net6.0\refint\Tubes2_C-Keris.dll
+C:\Users\MSI\OneDrive\Dokumen\Kuliah\Kuliah Semester 4\Strategi Algoritma\DicarryKevin\obj\Debug\net6.0\Tubes2_C-Keris.pdb
+C:\Users\MSI\OneDrive\Dokumen\Kuliah\Kuliah Semester 4\Strategi Algoritma\DicarryKevin\obj\Debug\net6.0\Tubes2_C-Keris.genruntimeconfig.cache
+C:\Users\MSI\OneDrive\Dokumen\Kuliah\Kuliah Semester 4\Strategi Algoritma\DicarryKevin\obj\Debug\net6.0\ref\Tubes2_C-Keris.dll
