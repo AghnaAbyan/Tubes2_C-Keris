@@ -9,6 +9,7 @@ namespace map{
         private int countTreasure;
         private (int,int)[] listTreasure;
         private Solution solution;
+        private int checkedPointCount;
 
         // Konstruktor
         public Dfs(string mapString){
@@ -19,6 +20,7 @@ namespace map{
             countTreasure = map.countTreasure();
             listTreasure = new (int, int)[0];
             solution = new Solution();
+            checkedPointCount = 0;
         }
 
         // Boolean Titik Sudah Diperiksa
@@ -98,12 +100,17 @@ namespace map{
             return checkedPoint.Length;
         }
 
+        public int getCheckedPointCount() {
+            return checkedPointCount;
+        }
+
         // Prosedur Pengecekan
         public void dfsSearch(){
             (int,int) startPoint = map.startPoint();
             addSearch(startPoint.Item1, startPoint.Item2);
-            while(countTreasure != 0 && antrian.Count !=0) {
+            while(countTreasure != 0) {
                 Point point = antrian.Pop();
+                checkedPointCount++;
                 if (map.isTreasure(point.getPoint().Item1,point.getPoint().Item2)){
                     countTreasure--;
                     addTreasure(point.getPoint());
@@ -112,14 +119,14 @@ namespace map{
                     //addSearch(point.getPoint().Item1,point.getPoint().Item2);
                     addSolution(point);
                 }
-                (int,int) up = map.getUp(point.getPoint().Item1,point.getPoint().Item2);
-                (int,int) right = map.getRight(point.getPoint().Item1,point.getPoint().Item2);
-                (int,int) down = map.getDown(point.getPoint().Item1,point.getPoint().Item2);
                 (int,int) left = map.getLeft(point.getPoint().Item1,point.getPoint().Item2);
-                addSearch(up.Item1,up.Item2,"U",point);
-                addSearch(right.Item1,right.Item2,"R",point);
-                addSearch(down.Item1,down.Item2,"D",point);
+                (int,int) down = map.getDown(point.getPoint().Item1,point.getPoint().Item2);
+                (int,int) right = map.getRight(point.getPoint().Item1,point.getPoint().Item2);
+                (int,int) up = map.getUp(point.getPoint().Item1,point.getPoint().Item2);
                 addSearch(left.Item1,left.Item2,"L",point);
+                addSearch(down.Item1,down.Item2,"D",point);
+                addSearch(right.Item1,right.Item2,"R",point);
+                addSearch(up.Item1,up.Item2,"U",point);
                 insertChecked(point);
             }
             
@@ -131,20 +138,22 @@ namespace map{
             antrian.Clear();
             emptyCheckedPoint();
             addSearch(startPointBack.Item1,startPointBack.Item2);
+            solution = new Solution();
             bool found = false;
             while(!found){
                 Point point = antrian.Pop();
                 if (map.isStart(point.getPoint().Item1,point.getPoint().Item2)){
                     found = true;
+                    addSolution(point);
                 }
                 (int,int) left = map.getLeft(point.getPoint().Item1,point.getPoint().Item2);
                 (int,int) up = map.getUp(point.getPoint().Item1,point.getPoint().Item2);
                 (int,int) right = map.getRight(point.getPoint().Item1,point.getPoint().Item2);
                 (int,int) down = map.getDown(point.getPoint().Item1,point.getPoint().Item2);
-                addSearch(left.Item1,left.Item2);
-                addSearch(up.Item1,up.Item2);
-                addSearch(right.Item1,right.Item2);
-                addSearch(down.Item1,down.Item2);
+                addSearch(left.Item1,left.Item2,"L",point);
+                addSearch(up.Item1,up.Item2,"U",point);
+                addSearch(right.Item1,right.Item2,"R",point);
+                addSearch(down.Item1,down.Item2,"D",point);
                 insertChecked(point);
             }
         }
@@ -170,6 +179,14 @@ namespace map{
             }
         }
 
+        public void displayDirection(){
+            for(int i=0; i<solution.getListDirections().Length-1; i++){
+                Console.Write(solution.getListDirections()[i]);
+                Console.Write("-");
+            }
+            Console.WriteLine(solution.getListDirections()[solution.getListDirections().Length-1]);
+        }
+
         // Display Stack
         public void displayStack(){
             Console.WriteLine("Antrian: ");
@@ -177,9 +194,11 @@ namespace map{
             for(int i=0; i<antrian.Count; i++) {
                 Point x = antrian.Pop();
                 (int,int) xpoint = x.getPoint();
-                Console.WriteLine(x);
+                Console.Write(xpoint);
+                Console.Write(" ");
                 antrianNew.Push(x);
             }
+            Console.WriteLine();
             antrian = antrianNew;
         }
 

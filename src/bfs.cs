@@ -9,6 +9,7 @@ namespace map{
         private int countTreasure;
         private (int,int)[] listTreasure;
         private Solution solution;
+        private int checkedPointCount;
 
         //Constructor
         public Bfs(string mapString){
@@ -19,6 +20,7 @@ namespace map{
             countTreasure = map.countTreasure();
             listTreasure = new (int, int)[0];
             solution = new Solution();
+            checkedPointCount = 0;
         }
         //Memeriksa apakah titik sudah pernah diperiksa
         public bool alreadyChecked(Point point){
@@ -32,8 +34,20 @@ namespace map{
             }
             return found;
         }
+
+        //Memeriksa apakah treasure sudah pernah ditemukan sebelumnya
+        public bool alreadyFound((int,int) point){
+            int i=0;
+            bool found =false;
+            while (i<listTreasure.Length && !found){
+                if (listTreasure[i].Item1 == point.Item1 && listTreasure[i].Item2 == point.Item2){
+                    found = true;
+                }
+                i++;
+            }
+            return found;
+        }
         //Menambahkan elemen yang akan dicek
-        
         public void addSearch(int m, int n){
             if(m != -1 && n != -1){
                 Point add = new Point((m,n));
@@ -97,16 +111,24 @@ namespace map{
             return checkedPoint.Length;
         }
 
+        public Solution getSolution(){
+            return solution;
+        }
+
+        public int getCheckedPointCount() {
+            return checkedPointCount;
+        }
         //prosedur pengecekan
         public void bfsSearch(){
             (int,int) startPoint = map.startPoint();
             addSearch(startPoint.Item1, startPoint.Item2);
-            while(countTreasure != 0 && antrian.Count !=0) {
+            while(countTreasure != 0) {
                 Point point = antrian.Dequeue();
-                if (map.isTreasure(point.getPoint().Item1,point.getPoint().Item2)){
+                checkedPointCount++;
+                if (map.isTreasure(point.getPoint().Item1,point.getPoint().Item2)&& !alreadyFound(point.getPoint())){
                     countTreasure--;
                     addTreasure(point.getPoint());
-                    emptyCheckedPoint();
+                    //emptyCheckedPoint();
                     antrian.Clear();
                     //addSearch(point.getPoint().Item1,point.getPoint().Item2);
                     addSolution(point);
@@ -119,6 +141,14 @@ namespace map{
                 addSearch(right.Item1,right.Item2,"R",point);
                 addSearch(down.Item1,down.Item2,"D",point);
                 addSearch(left.Item1,left.Item2,"L",point);
+                if (antrian.Count == 0) {
+                    emptyCheckedPoint();
+                    addSearch(up.Item1,up.Item2,"U",point);
+                    addSearch(right.Item1,right.Item2,"R",point);
+                    addSearch(down.Item1,down.Item2,"D",point);
+                    addSearch(left.Item1,left.Item2,"L",point);
+                    insertChecked(point);
+                }
                 insertChecked(point);
             }
             
@@ -130,20 +160,22 @@ namespace map{
             antrian.Clear();
             emptyCheckedPoint();
             addSearch(startPointBack.Item1,startPointBack.Item2);
+            solution = new Solution();
             bool found = false;
             while(!found){
                 Point point = antrian.Dequeue();
                 if (map.isStart(point.getPoint().Item1,point.getPoint().Item2)){
                     found = true;
+                    addSolution(point);
                 }
                 (int,int) left = map.getLeft(point.getPoint().Item1,point.getPoint().Item2);
                 (int,int) up = map.getUp(point.getPoint().Item1,point.getPoint().Item2);
                 (int,int) right = map.getRight(point.getPoint().Item1,point.getPoint().Item2);
                 (int,int) down = map.getDown(point.getPoint().Item1,point.getPoint().Item2);
-                addSearch(left.Item1,left.Item2);
-                addSearch(up.Item1,up.Item2);
-                addSearch(right.Item1,right.Item2);
-                addSearch(down.Item1,down.Item2);
+                addSearch(left.Item1,left.Item2,"L",point);
+                addSearch(up.Item1,up.Item2,"U",point);
+                addSearch(right.Item1,right.Item2,"R",point);
+                addSearch(down.Item1,down.Item2,"D",point);
                 insertChecked(point);
             }
             
@@ -181,6 +213,15 @@ namespace map{
                 antrianNew.Enqueue(x);
             }
             antrian = antrianNew;
+        }
+
+        //Display direction
+        public void displayDirection(){
+            for(int i=0; i<solution.getListDirections().Length-1; i++){
+                Console.Write(solution.getListDirections()[i]);
+                Console.Write("-");
+            }
+            Console.WriteLine(solution.getListDirections()[solution.getListDirections().Length-1]);
         }
 
         public void emptyCheckedPoint(){

@@ -161,26 +161,49 @@ namespace map{
 
         public static void Main(){
             Map m = new Map();
-            m.makeMap("test1.txt");
+            m.makeMap("exMap.txt");
             m.printMap();
-            Bfs resultBFS = new Bfs("test1.txt");
+            Bfs resultBFS = new Bfs("exMap.txt");
             Console.WriteLine("=======================BFS=======================");
             Console.Write("Terdapat ");
             Console.Write(resultBFS.getTreasure());
             Console.WriteLine(" treasure yang ditemukan yaitu");
             resultBFS.bfsSearch();
-
             Console.WriteLine("Treasure: ");
             resultBFS.displayTreasure();
             Console.Write("Terdapat ");
-            Console.Write(resultBFS.gettotalPath());
-            Console.WriteLine(" titik yang diperiksa yaitu");
+            Console.Write(resultBFS.getCheckedPointCount());
+            Console.WriteLine(" titik yang diperiksa");
             Console.WriteLine("Path: ");
             resultBFS.displayPath();
+            resultBFS.displayDirection();
             Console.WriteLine("==========TSP==========");
             resultBFS.bfsSearchTSP();
             Console.WriteLine("Path: ");
-            resultBFS.displayTSP();
+            resultBFS.displayPath();
+            resultBFS.displayDirection();
+
+            //DFS
+            Dfs resultDFS = new Dfs("exMap.txt");
+            Console.WriteLine("=======================DFS=======================");
+            Console.Write("Terdapat ");
+            Console.Write(resultDFS.getTreasure());
+            Console.WriteLine(" treasure yang ditemukan yaitu");
+            resultDFS.dfsSearch();
+            Console.WriteLine("Treasure: ");
+            resultDFS.displayTreasure();
+            Console.Write("Terdapat ");
+            Console.Write(resultDFS.getCheckedPointCount());
+            Console.WriteLine(" titik yang diperiksa");
+            Console.WriteLine("Path: ");
+            resultDFS.displayPath();
+            resultDFS.displayDirection();
+            Console.WriteLine("==========TSP==========");
+            resultDFS.dfsSearchTSP();
+            Console.WriteLine("Path: ");
+            resultDFS.displayPath();
+            resultDFS.displayDirection();
+
         }
     }
 }

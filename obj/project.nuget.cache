@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "W0d47AkoLGKkU9yzY+aMFTgMYdyIIT+gwhkMjZG9QiqvkJO7wv3KtIGMaxq4e+JbrJAny3pw8vyJdXU76T1Ztg==",
+  "dgSpecHash": "MekLEiIl8kA8dOKtzO13NI+XiNmmAsfBcBbjd9CItVAjwHjNEGIzbgEqmE2EYTZNRWI+Zr1agd567IANigbCRA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MSI\\OneDrive\\Dokumen\\Kuliah\\Kuliah Semester 4\\Strategi Algoritma\\DicarryKevin\\Tubes2_C-Keris.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\MSI\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.15\\microsoft.netcore.app.ref.6.0.15.nupkg.sha512",
-    "C:\\Users\\MSI\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.15\\microsoft.windowsdesktop.app.ref.6.0.15.nupkg.sha512",
-    "C:\\Users\\MSI\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.15\\microsoft.aspnetcore.app.ref.6.0.15.nupkg.sha512",
-    "C:\\Users\\MSI\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.15\\microsoft.netcore.app.host.win-x64.6.0.15.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\User\\OneDrive - Institut Teknologi Bandung\\Semester 4\\Strategi Algoritma\\Tugas Besar 2\\Tubes2_C-Keris\\Tubes2_C-Keris.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

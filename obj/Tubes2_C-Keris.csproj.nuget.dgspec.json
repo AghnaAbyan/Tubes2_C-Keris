@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MSI\\OneDrive\\Dokumen\\Kuliah\\Kuliah Semester 4\\Strategi Algoritma\\DicarryKevin\\Tubes2_C-Keris.csproj": {}
+    "C:\\Users\\User\\OneDrive - Institut Teknologi Bandung\\Semester 4\\Strategi Algoritma\\Tugas Besar 2\\Tubes2_C-Keris\\Tubes2_C-Keris.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MSI\\OneDrive\\Dokumen\\Kuliah\\Kuliah Semester 4\\Strategi Algoritma\\DicarryKevin\\Tubes2_C-Keris.csproj": {
+    "C:\\Users\\User\\OneDrive - Institut Teknologi Bandung\\Semester 4\\Strategi Algoritma\\Tugas Besar 2\\Tubes2_C-Keris\\Tubes2_C-Keris.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MSI\\OneDrive\\Dokumen\\Kuliah\\Kuliah Semester 4\\Strategi Algoritma\\DicarryKevin\\Tubes2_C-Keris.csproj",
+        "projectUniqueName": "C:\\Users\\User\\OneDrive - Institut Teknologi Bandung\\Semester 4\\Strategi Algoritma\\Tugas Besar 2\\Tubes2_C-Keris\\Tubes2_C-Keris.csproj",
         "projectName": "Tubes2_C-Keris",
-        "projectPath": "C:\\Users\\MSI\\OneDrive\\Dokumen\\Kuliah\\Kuliah Semester 4\\Strategi Algoritma\\DicarryKevin\\Tubes2_C-Keris.csproj",
-        "packagesPath": "C:\\Users\\MSI\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MSI\\OneDrive\\Dokumen\\Kuliah\\Kuliah Semester 4\\Strategi Algoritma\\DicarryKevin\\obj\\",
+        "projectPath": "C:\\Users\\User\\OneDrive - Institut Teknologi Bandung\\Semester 4\\Strategi Algoritma\\Tugas Besar 2\\Tubes2_C-Keris\\Tubes2_C-Keris.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\OneDrive - Institut Teknologi Bandung\\Semester 4\\Strategi Algoritma\\Tugas Besar 2\\Tubes2_C-Keris\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\MSI\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -48,30 +50,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.15, 6.0.15]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.15, 6.0.15]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.15, 6.0.15]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.15, 6.0.15]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
