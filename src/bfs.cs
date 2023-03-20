@@ -85,19 +85,48 @@ namespace map{
             addSearch(startPoint.Item1, startPoint.Item2);
             while(countTreasure != 0 && antrian.Count !=0) {
                 (int,int) point = antrian.Dequeue();
-                if (map.isTreasure(point.Item1,point.Item2)){
-                    countTreasure--;
-                    addTreasure(point);
+                if(!alreadyChecked(point)){
+                    if (map.isTreasure(point.Item1,point.Item2)){
+                        countTreasure--;
+                        addTreasure(point);
+                    }
+                    (int,int) up = map.getUp(point.Item1,point.Item2);
+                    (int,int) right = map.getRight(point.Item1,point.Item2);
+                    (int,int) down = map.getDown(point.Item1,point.Item2);
+                    (int,int) left = map.getLeft(point.Item1,point.Item2);
+                    addSearch(up.Item1,up.Item2);
+                    addSearch(right.Item1,right.Item2);
+                    addSearch(down.Item1,down.Item2);
+                    addSearch(left.Item1,left.Item2);
+                    insertChecked(point);
                 }
-                (int,int) up = map.getUp(point.Item1,point.Item2);
-                (int,int) right = map.getRight(point.Item1,point.Item2);
-                (int,int) down = map.getDown(point.Item1,point.Item2);
-                (int,int) left = map.getLeft(point.Item1,point.Item2);
-                addSearch(up.Item1,up.Item2);
-                addSearch(right.Item1,right.Item2);
-                addSearch(down.Item1,down.Item2);
-                addSearch(left.Item1,left.Item2);
-                insertChecked(point);
+            }
+            
+        }
+
+        //Menambahkan fitur Travelling Salesman Problem
+        public void bfsSearchTSP(){
+            (int,int) startPointBack = checkedPoint[checkedPoint.Length-1];
+            antrian.Clear();
+            emptyCheckedPoint();
+            addSearch(startPointBack.Item1,startPointBack.Item2);
+            bool found = false;
+            while(!found){
+                (int,int) point = antrian.Dequeue();
+                if(!alreadyChecked(point)){
+                    if (map.isStart(point.Item1,point.Item2)){
+                        found = true;
+                    }
+                    (int,int) left = map.getLeft(point.Item1,point.Item2);
+                    (int,int) up = map.getUp(point.Item1,point.Item2);
+                    (int,int) right = map.getRight(point.Item1,point.Item2);
+                    (int,int) down = map.getDown(point.Item1,point.Item2);
+                    addSearch(left.Item1,left.Item2);
+                    addSearch(up.Item1,up.Item2);
+                    addSearch(right.Item1,right.Item2);
+                    addSearch(down.Item1,down.Item2);
+                    insertChecked(point);
+                }
             }
             
         }
@@ -126,6 +155,10 @@ namespace map{
                 antrianNew.Enqueue(x);
             }
             antrian = antrianNew;
+        }
+
+        public void emptyCheckedPoint(){
+            checkedPoint = new (int, int)[0];
         }
     }
 }

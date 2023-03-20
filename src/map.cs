@@ -161,9 +161,9 @@ namespace map{
 
         public static void Main(){
             Map m = new Map();
-            m.makeMap("exMap.txt");
+            m.makeMap("test1.txt");
             m.printMap();
-            Bfs resultBFS = new Bfs("exMap.txt");
+            Bfs resultBFS = new Bfs("test1.txt");
             Console.WriteLine("=======================BFS=======================");
             Console.Write("Terdapat ");
             Console.Write(resultBFS.getTreasure());
@@ -175,6 +175,10 @@ namespace map{
             Console.Write("Terdapat ");
             Console.Write(resultBFS.gettotalPath());
             Console.WriteLine(" titik yang diperiksa yaitu");
+            Console.WriteLine("Path: ");
+            resultBFS.displayPath();
+            Console.WriteLine("==========TSP==========");
+            resultBFS.bfsSearchTSP();
             Console.WriteLine("Path: ");
             resultBFS.displayPath();
         }
