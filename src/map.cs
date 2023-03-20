@@ -180,7 +180,7 @@ namespace map{
             Console.WriteLine("==========TSP==========");
             resultBFS.bfsSearchTSP();
             Console.WriteLine("Path: ");
-            resultBFS.displayPath();
+            resultBFS.displayTSP();
         }
     }
 }
