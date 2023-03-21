@@ -33,6 +33,7 @@ namespace ckeris
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
+            buttonVisualize_Click(sender, e);
                 labelNotif.Text = currentMethod;
                 // show Path
 
@@ -48,36 +49,55 @@ namespace ckeris
                     {
                         result.bfsSearch();
                     }
-                    labelNotif.Text = "Path: " + result.getCheckedPointCount().ToString();
-                    for (int i = 0; i < result.getSolution().getPointList().Length; i++)
-                    {
-                        //Thread.Sleep(500);
-                        int row = result.getSolution().getPointList()[i].Item1;
-                        int col = result.getSolution().getPointList()[i].Item2;
-                        dataGridViewMap.Rows[row].Cells[col].Style.BackColor = Color.Green;
-                    }
-                    labelNotif.Text = "Using " + currentMethod + "\nUsing TSP: " + useTSP.ToString() + "\n" + "Route: " + result.getSolution().getdirectionString() + "\n" + "Nodes: " + "ininodesnya \n" + "Steps: " + "inistepsnya \n" + "Execution time: " + "iniexecutiontime";
+                Thread t = new Thread(() => changeWarnaBfs(result));
+                t.Start();
+                labelNotif.Text = "Using " + currentMethod + "\nUsing TSP: " + useTSP.ToString() + "\n" + "Route: " + result.getSolution().getdirectionString() + "\n" + "Nodes: " + result.getCheckedPointCount().ToString() + "\n" + "Steps: " + (result.getSolution().getPointList().Length-1).ToString()+ "\n" + "Execution time: " + "iniexecutiontime";
                 }
-                if (currentMethod == "DFS")
+            if (currentMethod == "DFS")
+            {
+                Dfs result = new Dfs(textFilename.Text);
+                if (useTSP)
                 {
-                    Dfs result = new Dfs(textFilename.Text);
-                    if (useTSP)
-                    {
-                        result.dfsSearchTSP();
-                    }
-                    else
-                    {
-                        result.dfsSearch();
-                    }
-                    labelNotif.Text = "Path: " + result.getCheckedPointCount().ToString();
-                    for (int i = 0; i < result.getSolution().getPointList().Length; i++)
-                    {
-                        //Thread.Sleep(500);
-                        int row = result.getSolution().getPointList()[i].Item1;
-                        int col = result.getSolution().getPointList()[i].Item2;
-                        dataGridViewMap.Rows[row].Cells[col].Style.BackColor = Color.Green;
-                    }
+                    result.dfsSearchTSP();
                 }
+                else
+                {
+                    result.dfsSearch();
+                }
+                Thread t = new Thread(() => changeWarnaDfs(result));
+                t.Start();
+                labelNotif.Text = "Using " + currentMethod + "\nUsing TSP: " + useTSP.ToString() + "\n" + "Route: " + result.getSolution().getdirectionString() + "\n" + "Nodes: " + result.getCheckedPointCount().ToString() + "\n" + "Steps: " + (result.getSolution().getPointList().Length - 1).ToString() + "\n" + "Execution time: " + "iniexecutiontime";
+            }
+        }
+
+        private void changeWarnaBfs(Bfs result)
+        {
+            for (int i = 0; i < result.getSolution().getPointList().Length; i++)
+            {
+                int row = result.getSolution().getPointList()[i].Item1;
+                int col = result.getSolution().getPointList()[i].Item2;
+                dataGridViewMap.Rows[row].Cells[col].Style.BackColor = Color.Green;
+                dataGridViewMap.Rows[row].Cells[col].Style.ForeColor = Color.White;
+                dataGridViewMap.Rows[row].Cells[col].Value = "X";
+                Thread.Sleep(500);
+                dataGridViewMap.Rows[row].Cells[col].Value = "";
+            }
+        }
+
+        private void changeWarnaDfs(Dfs result)
+        {
+            for (int i = 0; i < result.getSolution().getPointList().Length; i++)
+            {
+                int row = result.getSolution().getPointList()[i].Item1;
+                int col = result.getSolution().getPointList()[i].Item2;
+                dataGridViewMap.Rows[row].Cells[col].Style.BackColor = Color.Green;
+                dataGridViewMap.Rows[row].Cells[col].Style.ForeColor = Color.White;
+                dataGridViewMap.Rows[row].Cells[col].Value = "X";
+                Thread.Sleep(500);
+                dataGridViewMap.Rows[row].Cells[col].Value = "";
+            }
+
+            
         }
 
         private void buttonBFS_CheckedChanged(object sender, EventArgs e)
@@ -113,52 +133,63 @@ namespace ckeris
                 }
                 catch (FileNotFoundException er)
                 {
-                    labelNotif.Text = "File not found!";
+                    labelNotif.Text = "File tidak ditemukan!";
                 }
                 dataGridViewMap.ColumnCount = m.getN();
 
-                dataGridViewMap.Size = new System.Drawing.Size(22 * m.getN(), 22 * m.getN());
-
-                for (int i = 0; i < m.getN(); i++)
+                if (!m.isValid())
                 {
-                    string[] row = new string[m.getN()];
-                    for (int j = 0; j < m.getN(); j++)
-                    {
-                        row[j] = m.get(i, j).ToString();
-                    }
-                    dataGridViewMap.Rows.Add(row);
+                    labelNotif.Text = "Map tidak valid!";
                 }
-                // Change value
-                foreach (DataGridViewRow row in dataGridViewMap.Rows)
-                {
-                    for (int i = 0; i < m.getN(); i++)
+                else {
+                    //dataGridViewMap.Size = new System.Drawing.Size(22 * m.getM(), 22 * m.getN());
+
+                    for (int i = 0; i < m.getM(); i++)
                     {
-                        if (row.Cells[i].Value != null)
+                        string[] row = new string[m.getN()];
+                        for (int j = 0; j < m.getN(); j++)
                         {
-                            if (row.Cells[i].Value.ToString() == "K")
+                            row[j] = m.get(i, j).ToString();
+                        }
+                        dataGridViewMap.Rows.Add(row);
+                    }
+                    // Change value
+                    foreach (DataGridViewRow row in dataGridViewMap.Rows)
+                    {
+                        for (int i = 0; i < m.getN(); i++)
+                        {
+                            if (row.Cells[i].Value != null)
                             {
-                                row.Cells[i].Value = "";
-                                row.Cells[i].Style.BackColor = Color.Blue;
-                            }
-                            if (row.Cells[i].Value.ToString() == "X")
-                            {
-                                row.Cells[i].Value = "";
-                                row.Cells[i].Style.BackColor = Color.Black;
-                            }
-                            if (row.Cells[i].Value.ToString() == "T")
-                            {
-                                row.Cells[i].Value = "";
-                                row.Cells[i].Style.BackColor = Color.Yellow;
-                            }
-                            if (row.Cells[i].Value.ToString() == "R")
-                            {
-                                row.Cells[i].Value = "";
-                                row.Cells[i].Style.BackColor = Color.White;
+                                if (row.Cells[i].Value.ToString() == "K")
+                                {
+                                    row.Cells[i].Value = "";
+                                    row.Cells[i].Style.BackColor = Color.Blue;
+                                }
+                                if (row.Cells[i].Value.ToString() == "X")
+                                {
+                                    row.Cells[i].Value = "";
+                                    row.Cells[i].Style.BackColor = Color.Black;
+                                }
+                                if (row.Cells[i].Value.ToString() == "T")
+                                {
+                                    row.Cells[i].Value = "";
+                                    row.Cells[i].Style.BackColor = Color.Yellow;
+                                }
+                                if (row.Cells[i].Value.ToString() == "R")
+                                {
+                                    row.Cells[i].Value = "";
+                                    row.Cells[i].Style.BackColor = Color.White;
+                                }
                             }
                         }
                     }
                 }
             }
+        }
+
+        private void labelJudul_Click(object sender, EventArgs e)
+        {
+
         }
 
         // button visualize end

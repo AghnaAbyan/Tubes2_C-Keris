@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelJudul = new System.Windows.Forms.Label();
             this.filenameLabel = new System.Windows.Forms.Label();
-            this.textFilename = new System.Windows.Forms.TextBox();
             this.buttonStart = new System.Windows.Forms.Button();
             this.labelMap = new System.Windows.Forms.Label();
             this.dataGridViewMap = new System.Windows.Forms.DataGridView();
-            this.initial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelNotif = new System.Windows.Forms.Label();
             this.buttonBFS = new System.Windows.Forms.RadioButton();
             this.buttonDFS = new System.Windows.Forms.RadioButton();
@@ -52,7 +52,8 @@
             this.labelSolution = new System.Windows.Forms.Label();
             this.textBoxSolution = new System.Windows.Forms.TextBox();
             this.pictureBoxMrKrab = new System.Windows.Forms.PictureBox();
-            this.labelNotifBaru = new System.Windows.Forms.TextBox();
+            this.initial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textFilename = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMrKrab)).BeginInit();
             this.SuspendLayout();
@@ -62,11 +63,13 @@
             this.labelJudul.AutoSize = true;
             this.labelJudul.BackColor = System.Drawing.Color.Transparent;
             this.labelJudul.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelJudul.Location = new System.Drawing.Point(257, 29);
+            this.labelJudul.Location = new System.Drawing.Point(269, 29);
             this.labelJudul.Name = "labelJudul";
-            this.labelJudul.Size = new System.Drawing.Size(426, 51);
+            this.labelJudul.Size = new System.Drawing.Size(405, 51);
             this.labelJudul.TabIndex = 0;
-            this.labelJudul.Text = "TREASURE HUNT SOLVER";
+            this.labelJudul.Text = "ALAT PENCARI NAFKAH";
+            this.labelJudul.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelJudul.Click += new System.EventHandler(this.labelJudul_Click);
             // 
             // filenameLabel
             // 
@@ -78,13 +81,6 @@
             this.filenameLabel.Size = new System.Drawing.Size(183, 25);
             this.filenameLabel.TabIndex = 1;
             this.filenameLabel.Text = "Ingfokan nama file:";
-            // 
-            // textFilename
-            // 
-            this.textFilename.Location = new System.Drawing.Point(43, 152);
-            this.textFilename.Name = "textFilename";
-            this.textFilename.Size = new System.Drawing.Size(205, 26);
-            this.textFilename.TabIndex = 2;
             // 
             // buttonStart
             // 
@@ -101,7 +97,7 @@
             this.labelMap.AutoSize = true;
             this.labelMap.BackColor = System.Drawing.Color.Transparent;
             this.labelMap.Font = new System.Drawing.Font("Tw Cen MT", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMap.Location = new System.Drawing.Point(316, 124);
+            this.labelMap.Location = new System.Drawing.Point(330, 124);
             this.labelMap.Name = "labelMap";
             this.labelMap.Size = new System.Drawing.Size(58, 25);
             this.labelMap.TabIndex = 4;
@@ -113,15 +109,29 @@
             this.dataGridViewMap.AllowUserToDeleteRows = false;
             this.dataGridViewMap.AllowUserToResizeColumns = false;
             this.dataGridViewMap.AllowUserToResizeRows = false;
-            this.dataGridViewMap.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewMap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCellsExceptHeader;
-            this.dataGridViewMap.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewMap.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewMap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridViewMap.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridViewMap.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewMap.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewMap.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridViewMap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMap.ColumnHeadersVisible = false;
             this.dataGridViewMap.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.initial});
+            this.dataGridViewMap.Cursor = System.Windows.Forms.Cursors.Arrow;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewMap.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewMap.GridColor = System.Drawing.Color.Black;
             this.dataGridViewMap.Location = new System.Drawing.Point(345, 170);
             this.dataGridViewMap.MultiSelect = false;
@@ -129,25 +139,15 @@
             this.dataGridViewMap.ReadOnly = true;
             this.dataGridViewMap.RowHeadersVisible = false;
             this.dataGridViewMap.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewMap.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewMap.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewMap.RowTemplate.Height = 20;
             this.dataGridViewMap.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridViewMap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridViewMap.Size = new System.Drawing.Size(385, 352);
+            this.dataGridViewMap.Size = new System.Drawing.Size(427, 276);
             this.dataGridViewMap.TabIndex = 0;
             this.dataGridViewMap.GridColorChanged += new System.EventHandler(this.buttonStart_Click);
-            // 
-            // initial
-            // 
-            this.initial.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.initial.DefaultCellStyle = dataGridViewCellStyle1;
-            this.initial.HeaderText = "initial";
-            this.initial.MinimumWidth = 100;
-            this.initial.Name = "initial";
-            this.initial.ReadOnly = true;
             // 
             // labelNotif
             // 
@@ -199,7 +199,7 @@
             // textBoxStart
             // 
             this.textBoxStart.BackColor = System.Drawing.Color.Blue;
-            this.textBoxStart.Location = new System.Drawing.Point(207, 265);
+            this.textBoxStart.Location = new System.Drawing.Point(196, 336);
             this.textBoxStart.Name = "textBoxStart";
             this.textBoxStart.Size = new System.Drawing.Size(27, 26);
             this.textBoxStart.TabIndex = 9;
@@ -207,7 +207,7 @@
             // textBoxTreasue
             // 
             this.textBoxTreasue.BackColor = System.Drawing.Color.Yellow;
-            this.textBoxTreasue.Location = new System.Drawing.Point(207, 299);
+            this.textBoxTreasue.Location = new System.Drawing.Point(196, 370);
             this.textBoxTreasue.Name = "textBoxTreasue";
             this.textBoxTreasue.Size = new System.Drawing.Size(27, 26);
             this.textBoxTreasue.TabIndex = 10;
@@ -217,7 +217,7 @@
             this.textStart.AutoSize = true;
             this.textStart.BackColor = System.Drawing.Color.Transparent;
             this.textStart.Font = new System.Drawing.Font("Tw Cen MT", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textStart.Location = new System.Drawing.Point(240, 267);
+            this.textStart.Location = new System.Drawing.Point(229, 338);
             this.textStart.Name = "textStart";
             this.textStart.Size = new System.Drawing.Size(48, 23);
             this.textStart.TabIndex = 11;
@@ -228,7 +228,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(240, 302);
+            this.label1.Location = new System.Drawing.Point(229, 373);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 23);
             this.label1.TabIndex = 12;
@@ -249,7 +249,7 @@
             this.labelCredit.AutoSize = true;
             this.labelCredit.BackColor = System.Drawing.Color.Transparent;
             this.labelCredit.Font = new System.Drawing.Font("Tw Cen MT", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCredit.Location = new System.Drawing.Point(401, 80);
+            this.labelCredit.Location = new System.Drawing.Point(419, 80);
             this.labelCredit.Name = "labelCredit";
             this.labelCredit.Size = new System.Drawing.Size(107, 25);
             this.labelCredit.TabIndex = 14;
@@ -271,7 +271,7 @@
             this.labelSolution.AutoSize = true;
             this.labelSolution.BackColor = System.Drawing.Color.Transparent;
             this.labelSolution.Font = new System.Drawing.Font("Tw Cen MT", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSolution.Location = new System.Drawing.Point(240, 338);
+            this.labelSolution.Location = new System.Drawing.Point(229, 409);
             this.labelSolution.Name = "labelSolution";
             this.labelSolution.Size = new System.Drawing.Size(71, 23);
             this.labelSolution.TabIndex = 17;
@@ -280,7 +280,7 @@
             // textBoxSolution
             // 
             this.textBoxSolution.BackColor = System.Drawing.Color.Green;
-            this.textBoxSolution.Location = new System.Drawing.Point(207, 335);
+            this.textBoxSolution.Location = new System.Drawing.Point(196, 406);
             this.textBoxSolution.Name = "textBoxSolution";
             this.textBoxSolution.Size = new System.Drawing.Size(27, 26);
             this.textBoxSolution.TabIndex = 16;
@@ -290,19 +290,29 @@
             this.pictureBoxMrKrab.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxMrKrab.Image = global::ckeris.Properties.Resources.mrkrab;
             this.pictureBoxMrKrab.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxMrKrab.InitialImage")));
-            this.pictureBoxMrKrab.Location = new System.Drawing.Point(706, -64);
+            this.pictureBoxMrKrab.Location = new System.Drawing.Point(706, -81);
             this.pictureBoxMrKrab.Name = "pictureBoxMrKrab";
-            this.pictureBoxMrKrab.Size = new System.Drawing.Size(210, 297);
+            this.pictureBoxMrKrab.Size = new System.Drawing.Size(210, 332);
             this.pictureBoxMrKrab.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxMrKrab.TabIndex = 0;
             this.pictureBoxMrKrab.TabStop = false;
             // 
-            // labelNotifBaru
+            // initial
             // 
-            this.labelNotifBaru.Location = new System.Drawing.Point(50, 452);
-            this.labelNotifBaru.Name = "labelNotifBaru";
-            this.labelNotifBaru.Size = new System.Drawing.Size(270, 26);
-            this.labelNotifBaru.TabIndex = 18;
+            this.initial.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.initial.DefaultCellStyle = dataGridViewCellStyle2;
+            this.initial.HeaderText = "initial";
+            this.initial.MinimumWidth = 100;
+            this.initial.Name = "initial";
+            this.initial.ReadOnly = true;
+            // 
+            // textFilename
+            // 
+            this.textFilename.Location = new System.Drawing.Point(43, 152);
+            this.textFilename.Name = "textFilename";
+            this.textFilename.Size = new System.Drawing.Size(205, 26);
+            this.textFilename.TabIndex = 2;
             // 
             // Form1
             // 
@@ -310,8 +320,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::ckeris.Properties.Resources.spongebobsky_copy2;
-            this.ClientSize = new System.Drawing.Size(928, 568);
-            this.Controls.Add(this.labelNotifBaru);
+            this.ClientSize = new System.Drawing.Size(940, 644);
             this.Controls.Add(this.labelSolution);
             this.Controls.Add(this.textBoxSolution);
             this.Controls.Add(this.labelCara);
@@ -346,12 +355,10 @@
 
         private System.Windows.Forms.Label labelJudul;
         private System.Windows.Forms.Label filenameLabel;
-        private System.Windows.Forms.TextBox textFilename;
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.Label labelMap;
         private System.Windows.Forms.DataGridView dataGridViewMap;
         private System.Windows.Forms.Label labelNotif;
-        private System.Windows.Forms.DataGridViewTextBoxColumn initial;
         private System.Windows.Forms.RadioButton buttonBFS;
         private System.Windows.Forms.RadioButton buttonDFS;
         private System.Windows.Forms.CheckBox checkBox1;
@@ -365,7 +372,8 @@
         private System.Windows.Forms.Label labelSolution;
         private System.Windows.Forms.TextBox textBoxSolution;
         private System.Windows.Forms.PictureBox pictureBoxMrKrab;
-        private System.Windows.Forms.TextBox labelNotifBaru;
+        private System.Windows.Forms.DataGridViewTextBoxColumn initial;
+        private System.Windows.Forms.TextBox textFilename;
     }
 }
 

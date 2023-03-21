@@ -4,20 +4,23 @@ using System.Text;
 
 namespace ckeris.structs{
     class Map{
+        private int M;
         private int N;
         private char[,] data;
 
         /* default ctor */
         public Map(){
+            M = 0;
             N = 0;
             data = new char[1,1];
         }
 
         /* ctor with parameter */
-        public Map(int n){
+        public Map(int m, int n){
+            M = m;
             N = n;
-            data = new char[n,n];
-            for(int i = 0; i < N; i++){
+            data = new char[m,n];
+            for(int i = 0; i < M; i++){
                 for(int j = 0; j < N; j++){
                     data[i,j] = '.';
                 }
@@ -25,10 +28,11 @@ namespace ckeris.structs{
         }
 
         /* set nilai N */
-        public void setN(int n){
+        public void setN(int m, int n){
+            M = m;
             N = n;
-            data = new char[n,n];
-            for(int i = 0; i < N; i++){
+            data = new char[m,n];
+            for(int i = 0; i < M; i++){
                 for(int j = 0; j < N; j++){
                     data[i,j] = '.';
                 }
@@ -42,6 +46,11 @@ namespace ckeris.structs{
         /* return nilai N */
         public int getN(){
             return N;
+        }
+
+        public int getM()
+        {
+            return M;
         }
 
         public bool isTreasure(int i, int j){
@@ -62,7 +71,7 @@ namespace ckeris.structs{
 
         public int countTreasure(){
             int count = 0;
-            for(int i=0; i< N; i++){
+            for(int i=0; i< M; i++){
                 for(int j=0; j<N; j++){
                     if (isTreasure(i,j)){
                         count++;
@@ -77,7 +86,7 @@ namespace ckeris.structs{
             i = 0;
             j = 0;
             bool found = false;
-            while(i < N && !found){
+            while(i < M && !found){
                 j = 0;
                 while(j < N && !found){
                     if (isStart(i,j)){
@@ -113,7 +122,7 @@ namespace ckeris.structs{
         }
 
         public (int,int) getDown(int i, int j) {
-            if(i==N-1){
+            if(i==M-1){
                 return (-1,-1);
             }
             else{
@@ -130,13 +139,42 @@ namespace ckeris.structs{
             }
         }
         
+        public bool isValid()
+        {
+            bool valid = true;
+            for(int i = 0; i < M; i++)
+            {
+                for(int j = 0; j < N; j++)
+                {
+                    if (!((data[i, j] == 'K') || (data[i, j] == 'T') || (data[i, j] == 'R') || (data[i, j] == 'X')))
+                    {
+                        valid = false;
+                    }
+                }
+            }
+            return valid;
+        }
+
         /* buat map dari file */
         public void makeMap(string filename){
             int n = 0;
-            foreach (string line in System.IO.File.ReadLines("..\\..\\test\\" + filename)){
-                n++;
+            int m = 0;
+            foreach (string line in System.IO.File.ReadLines("..\\..\\test\\" + filename))
+            {
+                m++;
             }
-            setN(n);
+
+            foreach (string line in System.IO.File.ReadLines("..\\..\\test\\" + filename)){
+                n = 0;
+                foreach(char c in line)
+                {
+                    if (c != ' ')
+                    {
+                        n++;
+                    }
+                }
+            }
+            setN(m, n);
             int i = 0;
             foreach (string line in System.IO.File.ReadLines("..\\..\\test\\" + filename)){
                 int j = 0;
@@ -151,7 +189,7 @@ namespace ckeris.structs{
         }
 
         public void printMap(){
-            for(int i = 0; i < N; i++){
+            for(int i = 0; i < M; i++){
                 for(int j = 0; j < N; j++){
                     Console.Write(data[i,j]);
                 }
