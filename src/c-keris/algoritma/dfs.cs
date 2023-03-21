@@ -182,15 +182,50 @@ namespace ckeris.algoritma
         // Travelling Salesman Problem
         public void dfsSearchTSP()
         {
+            (int, int) startPoint = map.startPoint();
+            addSearch(startPoint.Item1, startPoint.Item2);
+            Point point = new Point((0, 0));
+            while (countTreasure != 0)
+            {
+                point = antrian.Pop();
+                checkedPointCount++;
+                if (map.isTreasure(point.getPoint().Item1, point.getPoint().Item2) && !alreadyFound(point.getPoint()))
+                {
+                    countTreasure--;
+                    addTreasure(point.getPoint());
+                    emptyCheckedPoint();
+                    antrian.Clear();
+                    //addSearch(point.getPoint().Item1,point.getPoint().Item2);
+                    addSolution(point);
+                }
+                (int, int) up = map.getUp(point.getPoint().Item1, point.getPoint().Item2);
+                (int, int) right = map.getRight(point.getPoint().Item1, point.getPoint().Item2);
+                (int, int) down = map.getDown(point.getPoint().Item1, point.getPoint().Item2);
+                (int, int) left = map.getLeft(point.getPoint().Item1, point.getPoint().Item2);
+                addSearch(up.Item1, up.Item2, "U", point);
+                addSearch(right.Item1, right.Item2, "R", point);
+                addSearch(down.Item1, down.Item2, "D", point);
+                addSearch(left.Item1, left.Item2, "L", point);
+                if (antrian.Count == 0)
+                {
+                    emptyCheckedPoint();
+                    addSearch(up.Item1, up.Item2, "U", point);
+                    addSearch(right.Item1, right.Item2, "R", point);
+                    addSearch(down.Item1, down.Item2, "D", point);
+                    addSearch(left.Item1, left.Item2, "L", point);
+                    insertChecked(point);
+                }
+                insertChecked(point);
+            }
             (int, int) startPointBack = solution.getPointList()[solution.getPointList().Length - 1];
             antrian.Clear();
             emptyCheckedPoint();
-            addSearch(startPointBack.Item1, startPointBack.Item2);
-            solution = new Solution();
+            //addSearch(startPointBack.Item1,startPointBack.Item2);
+            antrian.Push(point);
             bool found = false;
             while (!found)
             {
-                Point point = antrian.Pop();
+                point = antrian.Pop();
                 if (map.isStart(point.getPoint().Item1, point.getPoint().Item2))
                 {
                     found = true;

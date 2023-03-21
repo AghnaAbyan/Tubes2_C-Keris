@@ -13,6 +13,13 @@ namespace ckeris.structs{
             directions = new string[0];
         }
 
+        public Point(Point otherpoint)
+        {
+            thisPoint = otherpoint.getPoint();
+            listpreviousPoint = otherpoint.getListPrevPoint();
+            directions = otherpoint.getDirections();
+        }
+
         public Point((int,int) pointnow, Point otherpoint, string direction){
             thisPoint = pointnow;
             (int,int)[] listpreviousPointnew = new (int,int)[otherpoint.getListPrevPointLength()+1];

@@ -8,3 +8,13 @@ D:\GitHub\Tubes2_C-Keris\src\c-keris\obj\Debug\c-keris.csproj.GenerateResource.c
 D:\GitHub\Tubes2_C-Keris\src\c-keris\obj\Debug\c-keris.csproj.CoreCompileInputs.cache
 D:\GitHub\Tubes2_C-Keris\src\c-keris\obj\Debug\c-keris.exe
 D:\GitHub\Tubes2_C-Keris\src\c-keris\obj\Debug\c-keris.pdb
+C:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\bin\Debug\c-keris.exe.config
+C:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\bin\Debug\c-keris.exe
+C:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\bin\Debug\c-keris.pdb
+C:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\src\c-keris\obj\Debug\c-keris.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\src\c-keris\obj\Debug\ckeris.Form1.resources
+C:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\src\c-keris\obj\Debug\ckeris.Properties.Resources.resources
+C:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\src\c-keris\obj\Debug\c-keris.csproj.GenerateResource.cache
+C:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\src\c-keris\obj\Debug\c-keris.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\src\c-keris\obj\Debug\c-keris.exe
+C:\Users\User\OneDrive - Institut Teknologi Bandung\Semester 4\Strategi Algoritma\Tugas Besar 2\Tubes2_C-Keris\src\c-keris\obj\Debug\c-keris.pdb
