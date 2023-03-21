@@ -24,6 +24,7 @@ namespace ckeris
         }
 
         private string currentMethod;
+        private bool useTSP = false;
 
         public void LoadMap(object sender, EventArgs e)
         {
@@ -107,25 +108,44 @@ namespace ckeris
                 if (currentMethod == "BFS")
                 {
                     Bfs result = new Bfs(textFilename.Text);
-                    result.bfsSearch();
+                    
+                    if (useTSP)
+                    {
+                        result.bfsSearchTSP();
+                    }
+                    else
+                    {
+                        result.bfsSearch();
+                    }
                     labelNotif.Text = "Path: " + result.getCheckedPointCount().ToString();
                     for (int i = 0; i < result.getSolution().getPointList().Length; i++)
                     {
                         int row = result.getSolution().getPointList()[i].Item1;
                         int col = result.getSolution().getPointList()[i].Item2;
-                        labelNotif.Text = row.ToString() + ", " + col.ToString();
                         dataGridViewMap.Rows[row].Cells[col].Style.BackColor = Color.Green;
-                        Thread.Sleep(1000);
+                        // Thread.Sleep(500);
                     }
+                    labelNotif.Text = "Using "+ currentMethod + "\nUsing TSP: " + useTSP.ToString() + "\n" + "Route: " + "inirutenya \n" + "Nodes: " + "ininodesnya \n" + "Steps: " + "inistepsnya \n" + "Execution time: " + "iniexecutiontime";
                 }
                 if (currentMethod == "DFS")
                 {
                     Dfs result = new Dfs(textFilename.Text);
-                    
-                }
-                if (currentMethod == "TSP")
-                {
-
+                    if (useTSP)
+                    {
+                        result.dfsSearchTSP();
+                    }
+                    else
+                    {
+                        result.dfsSearch();
+                    }
+                    labelNotif.Text = "Path: " + result.getCheckedPointCount().ToString();
+                    for (int i = 0; i < result.getSolution().getPointList().Length; i++)
+                    {
+                        int row = result.getSolution().getPointList()[i].Item1;
+                        int col = result.getSolution().getPointList()[i].Item2;
+                        dataGridViewMap.Rows[row].Cells[col].Style.BackColor = Color.Green;
+                        // Thread.Sleep(500);
+                    }
                 }
             }
         }
@@ -144,5 +164,11 @@ namespace ckeris
         {
             currentMethod = "TSP";
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            useTSP = !useTSP;
+        }
+
     }
 }

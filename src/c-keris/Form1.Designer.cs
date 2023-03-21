@@ -28,19 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelJudul = new System.Windows.Forms.Label();
             this.filenameLabel = new System.Windows.Forms.Label();
             this.textFilename = new System.Windows.Forms.TextBox();
             this.buttonStart = new System.Windows.Forms.Button();
             this.labelMap = new System.Windows.Forms.Label();
             this.dataGridViewMap = new System.Windows.Forms.DataGridView();
-            this.labelNotif = new System.Windows.Forms.Label();
             this.initial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelNotif = new System.Windows.Forms.Label();
             this.buttonBFS = new System.Windows.Forms.RadioButton();
             this.buttonDFS = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textBoxStart = new System.Windows.Forms.TextBox();
+            this.textBoxTreasue = new System.Windows.Forms.TextBox();
+            this.textStart = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMap)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,9 +117,9 @@
             this.dataGridViewMap.ReadOnly = true;
             this.dataGridViewMap.RowHeadersVisible = false;
             this.dataGridViewMap.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewMap.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewMap.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewMap.RowTemplate.Height = 20;
             this.dataGridViewMap.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridViewMap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
@@ -123,23 +127,24 @@
             this.dataGridViewMap.TabIndex = 0;
             this.dataGridViewMap.GridColorChanged += new System.EventHandler(this.buttonStart_Click);
             // 
-            // labelNotif
-            // 
-            this.labelNotif.AutoSize = true;
-            this.labelNotif.Location = new System.Drawing.Point(43, 371);
-            this.labelNotif.Name = "labelNotif";
-            this.labelNotif.Size = new System.Drawing.Size(0, 20);
-            this.labelNotif.TabIndex = 5;
-            // 
             // initial
             // 
             this.initial.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.initial.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.initial.DefaultCellStyle = dataGridViewCellStyle3;
             this.initial.HeaderText = "initial";
             this.initial.MinimumWidth = 100;
             this.initial.Name = "initial";
             this.initial.ReadOnly = true;
+            // 
+            // labelNotif
+            // 
+            this.labelNotif.AutoSize = true;
+            this.labelNotif.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNotif.Location = new System.Drawing.Point(43, 371);
+            this.labelNotif.Name = "labelNotif";
+            this.labelNotif.Size = new System.Drawing.Size(0, 23);
+            this.labelNotif.TabIndex = 5;
             // 
             // buttonBFS
             // 
@@ -165,24 +170,63 @@
             this.buttonDFS.UseVisualStyleBackColor = true;
             this.buttonDFS.CheckedChanged += new System.EventHandler(this.buttonDFS_CheckedChanged);
             // 
-            // radioButton1
+            // checkBox1
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(47, 251);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(64, 24);
-            this.radioButton1.TabIndex = 8;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "TSP";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(47, 251);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(65, 24);
+            this.checkBox1.TabIndex = 8;
+            this.checkBox1.Text = "TSP";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // textBoxStart
+            // 
+            this.textBoxStart.BackColor = System.Drawing.Color.Blue;
+            this.textBoxStart.Location = new System.Drawing.Point(202, 188);
+            this.textBoxStart.Name = "textBoxStart";
+            this.textBoxStart.Size = new System.Drawing.Size(27, 26);
+            this.textBoxStart.TabIndex = 9;
+            // 
+            // textBoxTreasue
+            // 
+            this.textBoxTreasue.BackColor = System.Drawing.Color.Yellow;
+            this.textBoxTreasue.Location = new System.Drawing.Point(202, 236);
+            this.textBoxTreasue.Name = "textBoxTreasue";
+            this.textBoxTreasue.Size = new System.Drawing.Size(27, 26);
+            this.textBoxTreasue.TabIndex = 10;
+            // 
+            // textStart
+            // 
+            this.textStart.AutoSize = true;
+            this.textStart.Font = new System.Drawing.Font("Tw Cen MT", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textStart.Location = new System.Drawing.Point(235, 190);
+            this.textStart.Name = "textStart";
+            this.textStart.Size = new System.Drawing.Size(48, 23);
+            this.textStart.TabIndex = 11;
+            this.textStart.Text = "Start";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tw Cen MT", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(235, 239);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 23);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Treasure";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(928, 568);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textStart);
+            this.Controls.Add(this.textBoxTreasue);
+            this.Controls.Add(this.textBoxStart);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.buttonDFS);
             this.Controls.Add(this.buttonBFS);
             this.Controls.Add(this.labelNotif);
@@ -213,7 +257,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn initial;
         private System.Windows.Forms.RadioButton buttonBFS;
         private System.Windows.Forms.RadioButton buttonDFS;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox textBoxStart;
+        private System.Windows.Forms.TextBox textBoxTreasue;
+        private System.Windows.Forms.Label textStart;
+        private System.Windows.Forms.Label label1;
     }
 }
 

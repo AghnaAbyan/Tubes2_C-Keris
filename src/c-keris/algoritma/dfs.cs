@@ -101,6 +101,11 @@ namespace ckeris.algoritma{
             return checkedPoint.Length;
         }
 
+        public Solution getSolution()
+        {
+            return solution;
+        }
+
         public int getCheckedPointCount() {
             return checkedPointCount;
         }
