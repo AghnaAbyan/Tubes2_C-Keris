@@ -36,5 +36,15 @@ namespace ckeris.structs{
         public string[] getListDirections(){
             return listDirection;
         }
+
+        public string getdirectionString(){
+            string p = "";
+            for (int i=0; i < listDirection.Length-1; i++)
+            {
+                p = p + listDirection[i] + "-";
+            }
+            p = p + listDirection[listDirection.Length - 1];
+            return p;
+        }
     }
 }

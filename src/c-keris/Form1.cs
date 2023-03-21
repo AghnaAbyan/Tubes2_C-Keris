@@ -28,23 +28,80 @@ namespace ckeris
 
         public void LoadMap(object sender, EventArgs e)
         {
-           
+
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
-            dataGridViewMap.Visible = true;
-            /*
-            dataGridViewMap.ColumnCount = 5;
-            for (int i = 0; i < 5; i++)
-            {
-                string[] row = new string[5];
-                for (int j = 0; j < 5; j++)
+                labelNotif.Text = currentMethod;
+                // show Path
+
+                if (currentMethod == "BFS")
                 {
-                    row[j] = 0.ToString();
+                    Bfs result = new Bfs(textFilename.Text);
+
+                    if (useTSP)
+                    {
+                        result.bfsSearchTSP();
+                    }
+                    else
+                    {
+                        result.bfsSearch();
+                    }
+                    labelNotif.Text = "Path: " + result.getCheckedPointCount().ToString();
+                    for (int i = 0; i < result.getSolution().getPointList().Length; i++)
+                    {
+                        //Thread.Sleep(500);
+                        int row = result.getSolution().getPointList()[i].Item1;
+                        int col = result.getSolution().getPointList()[i].Item2;
+                        dataGridViewMap.Rows[row].Cells[col].Style.BackColor = Color.Green;
+                    }
+                    labelNotif.Text = "Using " + currentMethod + "\nUsing TSP: " + useTSP.ToString() + "\n" + "Route: " + result.getSolution().getdirectionString() + "\n" + "Nodes: " + "ininodesnya \n" + "Steps: " + "inistepsnya \n" + "Execution time: " + "iniexecutiontime";
                 }
-                dataGridViewMap.Rows.Add(row);
-            } */
+                if (currentMethod == "DFS")
+                {
+                    Dfs result = new Dfs(textFilename.Text);
+                    if (useTSP)
+                    {
+                        result.dfsSearchTSP();
+                    }
+                    else
+                    {
+                        result.dfsSearch();
+                    }
+                    labelNotif.Text = "Path: " + result.getCheckedPointCount().ToString();
+                    for (int i = 0; i < result.getSolution().getPointList().Length; i++)
+                    {
+                        //Thread.Sleep(500);
+                        int row = result.getSolution().getPointList()[i].Item1;
+                        int col = result.getSolution().getPointList()[i].Item2;
+                        dataGridViewMap.Rows[row].Cells[col].Style.BackColor = Color.Green;
+                    }
+                }
+        }
+
+        private void buttonBFS_CheckedChanged(object sender, EventArgs e)
+        {
+            currentMethod = "BFS";
+        }
+
+        private void buttonDFS_CheckedChanged(object sender, EventArgs e)
+        {
+            currentMethod = "DFS";
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            currentMethod = "TSP";
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            useTSP = !useTSP;
+        }
+
+        private void buttonVisualize_Click(object sender, EventArgs e)
+        {
             dataGridViewMap.ColumnCount = 0;
             // Loading map
             if (textFilename.Text != "")
@@ -54,7 +111,7 @@ namespace ckeris
                 {
                     m.makeMap(textFilename.Text);
                 }
-                catch(FileNotFoundException er)
+                catch (FileNotFoundException er)
                 {
                     labelNotif.Text = "File not found!";
                 }
@@ -71,7 +128,6 @@ namespace ckeris
                     }
                     dataGridViewMap.Rows.Add(row);
                 }
-                int size;
                 // Change value
                 foreach (DataGridViewRow row in dataGridViewMap.Rows)
                 {
@@ -102,73 +158,9 @@ namespace ckeris
                         }
                     }
                 }
-
-                labelNotif.Text = currentMethod;
-                // show Path
-                if (currentMethod == "BFS")
-                {
-                    Bfs result = new Bfs(textFilename.Text);
-                    
-                    if (useTSP)
-                    {
-                        result.bfsSearchTSP();
-                    }
-                    else
-                    {
-                        result.bfsSearch();
-                    }
-                    labelNotif.Text = "Path: " + result.getCheckedPointCount().ToString();
-                    for (int i = 0; i < result.getSolution().getPointList().Length; i++)
-                    {
-                        int row = result.getSolution().getPointList()[i].Item1;
-                        int col = result.getSolution().getPointList()[i].Item2;
-                        dataGridViewMap.Rows[row].Cells[col].Style.BackColor = Color.Green;
-                        // Thread.Sleep(500);
-                    }
-                    labelNotif.Text = "Using "+ currentMethod + "\nUsing TSP: " + useTSP.ToString() + "\n" + "Route: " + "inirutenya \n" + "Nodes: " + "ininodesnya \n" + "Steps: " + "inistepsnya \n" + "Execution time: " + "iniexecutiontime";
-                }
-                if (currentMethod == "DFS")
-                {
-                    Dfs result = new Dfs(textFilename.Text);
-                    if (useTSP)
-                    {
-                        result.dfsSearchTSP();
-                    }
-                    else
-                    {
-                        result.dfsSearch();
-                    }
-                    labelNotif.Text = "Path: " + result.getCheckedPointCount().ToString();
-                    for (int i = 0; i < result.getSolution().getPointList().Length; i++)
-                    {
-                        int row = result.getSolution().getPointList()[i].Item1;
-                        int col = result.getSolution().getPointList()[i].Item2;
-                        dataGridViewMap.Rows[row].Cells[col].Style.BackColor = Color.Green;
-                        // Thread.Sleep(500);
-                    }
-                }
             }
         }
 
-        private void buttonBFS_CheckedChanged(object sender, EventArgs e)
-        {
-            currentMethod = "BFS";
-        }
-
-        private void buttonDFS_CheckedChanged(object sender, EventArgs e)
-        {
-            currentMethod = "DFS";
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            currentMethod = "TSP";
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            useTSP = !useTSP;
-        }
-
+        // button visualize end
     }
 }

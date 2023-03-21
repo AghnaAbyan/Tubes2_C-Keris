@@ -112,5 +112,17 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mrkrab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spongebobsky.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spongebobsky_copy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spongebobsky_copy2.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
