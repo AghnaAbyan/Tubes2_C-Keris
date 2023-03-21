@@ -11,6 +11,7 @@ namespace ckeris.algoritma{
         private (int,int)[] listTreasure;
         private Solution solution;
         private int checkedPointCount;
+        private double exectime;
 
         //Constructor
         public Bfs(string mapString){
@@ -22,6 +23,7 @@ namespace ckeris.algoritma{
             listTreasure = new (int, int)[0];
             solution = new Solution();
             checkedPointCount = 0;
+            exectime = 0;
         }
         //Memeriksa apakah titik sudah pernah diperiksa
         public bool alreadyChecked(Point point){
@@ -119,8 +121,14 @@ namespace ckeris.algoritma{
         public int getCheckedPointCount() {
             return checkedPointCount;
         }
+
+        public double getexectime()
+        {
+            return exectime;
+        }
         //prosedur pengecekan
         public void bfsSearch(){
+            DateTime start = DateTime.Now;
             (int,int) startPoint = map.startPoint();
             addSearch(startPoint.Item1, startPoint.Item2);
             while(countTreasure != 0) {
@@ -152,11 +160,15 @@ namespace ckeris.algoritma{
                 }
                 insertChecked(point);
             }
-            
+            DateTime end = DateTime.Now;
+            TimeSpan ts = end - start;
+            exectime = ts.TotalMilliseconds;
+
         }
 
         //Menambahkan fitur Travelling Salesman Problem
         public void bfsSearchTSP(){
+            DateTime start = DateTime.Now;
             (int, int) startPoint = map.startPoint();
             addSearch(startPoint.Item1, startPoint.Item2);
             Point point = new Point((0,0));
@@ -214,7 +226,10 @@ namespace ckeris.algoritma{
                 addSearch(down.Item1,down.Item2,"D",point);
                 insertChecked(point);
             }
-            
+            DateTime end = DateTime.Now;
+            TimeSpan ts = end - start;
+            exectime = ts.TotalMilliseconds;
+
         }
 
         //Display path

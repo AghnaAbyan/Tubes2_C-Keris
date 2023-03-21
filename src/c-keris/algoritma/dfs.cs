@@ -13,6 +13,7 @@ namespace ckeris.algoritma
         private (int, int)[] listTreasure;
         private Solution solution;
         private int checkedPointCount;
+        private double exectime;
 
         // Konstruktor
         public Dfs(string mapString)
@@ -25,6 +26,7 @@ namespace ckeris.algoritma
             listTreasure = new (int, int)[0];
             solution = new Solution();
             checkedPointCount = 0;
+            exectime = 0;
         }
 
         // Boolean Titik Sudah Diperiksa
@@ -148,9 +150,15 @@ namespace ckeris.algoritma
             return checkedPointCount;
         }
 
+        public double getExecTime()
+        {
+            return exectime;
+        }
+
         // Prosedur Pengecekan
         public void dfsSearch()
         {
+            DateTime start = DateTime.Now;
             (int, int) startPoint = map.startPoint();
             addSearch(startPoint.Item1, startPoint.Item2);
             while (countTreasure != 0)
@@ -161,7 +169,7 @@ namespace ckeris.algoritma
                 {
                     countTreasure--;
                     addTreasure(point.getPoint());
-                    emptyCheckedPoint();
+                    //emptyCheckedPoint();
                     antrian.Clear();
                     //addSearch(point.getPoint().Item1,point.getPoint().Item2);
                     addSolution(point);
@@ -170,18 +178,31 @@ namespace ckeris.algoritma
                 (int, int) down = map.getDown(point.getPoint().Item1, point.getPoint().Item2);
                 (int, int) right = map.getRight(point.getPoint().Item1, point.getPoint().Item2);
                 (int, int) up = map.getUp(point.getPoint().Item1, point.getPoint().Item2);
+                addSearch(up.Item1, up.Item2, "U", point);
                 addSearch(left.Item1, left.Item2, "L", point);
                 addSearch(down.Item1, down.Item2, "D", point);
                 addSearch(right.Item1, right.Item2, "R", point);
-                addSearch(up.Item1, up.Item2, "U", point);
+                if (antrian.Count == 0)
+                {
+                    emptyCheckedPoint();
+                    addSearch(up.Item1, up.Item2, "U", point);
+                    addSearch(left.Item1, left.Item2, "L", point);
+                    addSearch(down.Item1, down.Item2, "D", point);
+                    addSearch(right.Item1, right.Item2, "R", point);
+                    insertChecked(point);
+                }
                 insertChecked(point);
             }
+            DateTime end = DateTime.Now;
+            TimeSpan ts = end - start;
+            exectime = ts.TotalMilliseconds;
 
         }
 
         // Travelling Salesman Problem
         public void dfsSearchTSP()
         {
+            DateTime start = DateTime.Now;
             (int, int) startPoint = map.startPoint();
             addSearch(startPoint.Item1, startPoint.Item2);
             Point point = new Point((0, 0));
@@ -203,16 +224,16 @@ namespace ckeris.algoritma
                 (int, int) down = map.getDown(point.getPoint().Item1, point.getPoint().Item2);
                 (int, int) left = map.getLeft(point.getPoint().Item1, point.getPoint().Item2);
                 addSearch(up.Item1, up.Item2, "U", point);
-                addSearch(right.Item1, right.Item2, "R", point);
-                addSearch(down.Item1, down.Item2, "D", point);
                 addSearch(left.Item1, left.Item2, "L", point);
+                addSearch(down.Item1, down.Item2, "D", point);
+                addSearch(right.Item1, right.Item2, "R", point);
                 if (antrian.Count == 0)
                 {
                     emptyCheckedPoint();
                     addSearch(up.Item1, up.Item2, "U", point);
-                    addSearch(right.Item1, right.Item2, "R", point);
-                    addSearch(down.Item1, down.Item2, "D", point);
                     addSearch(left.Item1, left.Item2, "L", point);
+                    addSearch(down.Item1, down.Item2, "D", point);
+                    addSearch(right.Item1, right.Item2, "R", point);
                     insertChecked(point);
                 }
                 insertChecked(point);
@@ -232,15 +253,18 @@ namespace ckeris.algoritma
                     addSolution(point);
                 }
                 (int, int) left = map.getLeft(point.getPoint().Item1, point.getPoint().Item2);
-                (int, int) up = map.getUp(point.getPoint().Item1, point.getPoint().Item2);
                 (int, int) right = map.getRight(point.getPoint().Item1, point.getPoint().Item2);
                 (int, int) down = map.getDown(point.getPoint().Item1, point.getPoint().Item2);
-                addSearch(left.Item1, left.Item2, "L", point);
-                addSearch(up.Item1, up.Item2, "U", point);
+                (int, int) up = map.getUp(point.getPoint().Item1, point.getPoint().Item2);
                 addSearch(right.Item1, right.Item2, "R", point);
                 addSearch(down.Item1, down.Item2, "D", point);
+                addSearch(left.Item1, left.Item2, "L", point);
+                addSearch(up.Item1, up.Item2, "U", point);
                 insertChecked(point);
             }
+            DateTime end = DateTime.Now;
+            TimeSpan ts = end - start;
+            exectime = ts.TotalMilliseconds;
         }
 
         // Display Path

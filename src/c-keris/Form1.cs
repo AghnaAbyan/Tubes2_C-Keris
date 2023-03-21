@@ -51,7 +51,7 @@ namespace ckeris
                     }
                 Thread t = new Thread(() => changeWarnaBfs(result));
                 t.Start();
-                labelNotif.Text = "Using " + currentMethod + "\nUsing TSP: " + useTSP.ToString() + "\n" + "Route: " + result.getSolution().getdirectionString() + "\n" + "Nodes: " + result.getCheckedPointCount().ToString() + "\n" + "Steps: " + (result.getSolution().getPointList().Length-1).ToString()+ "\n" + "Execution time: " + "iniexecutiontime";
+                labelNotif.Text = "Using " + currentMethod + "\nUsing TSP: " + useTSP.ToString() + "\n" + "Route: " + result.getSolution().getdirectionString() + "\n" + "Nodes: " + result.getCheckedPointCount().ToString() + "\n" + "Steps: " + (result.getSolution().getPointList().Length-1).ToString()+ "\n" + "Execution time: " + result.getexectime().ToString() + " ms";
                 }
             if (currentMethod == "DFS")
             {
@@ -66,12 +66,14 @@ namespace ckeris
                 }
                 Thread t = new Thread(() => changeWarnaDfs(result));
                 t.Start();
-                labelNotif.Text = "Using " + currentMethod + "\nUsing TSP: " + useTSP.ToString() + "\n" + "Route: " + result.getSolution().getdirectionString() + "\n" + "Nodes: " + result.getCheckedPointCount().ToString() + "\n" + "Steps: " + (result.getSolution().getPointList().Length - 1).ToString() + "\n" + "Execution time: " + "iniexecutiontime";
+                labelNotif.Text = "Using " + currentMethod + "\nUsing TSP: " + useTSP.ToString() + "\n" + "Route: " + result.getSolution().getdirectionString() + "\n" + "Nodes: " + result.getCheckedPointCount().ToString() + "\n" + "Steps: " + (result.getSolution().getPointList().Length - 1).ToString() + "\n" + "Execution time: " + result.getExecTime().ToString() + " ms";
             }
         }
 
         private void changeWarnaBfs(Bfs result)
         {
+            Map m = new Map();
+            m.makeMap(textFilename.Text);
             for (int i = 0; i < result.getSolution().getPointList().Length; i++)
             {
                 int row = result.getSolution().getPointList()[i].Item1;
@@ -80,12 +82,25 @@ namespace ckeris
                 dataGridViewMap.Rows[row].Cells[col].Style.ForeColor = Color.White;
                 dataGridViewMap.Rows[row].Cells[col].Value = "X";
                 Thread.Sleep(500);
-                dataGridViewMap.Rows[row].Cells[col].Value = "";
+                if (m.isStart(result.getSolution().getPointList()[i].Item1, result.getSolution().getPointList()[i].Item2))
+                {
+                    dataGridViewMap.Rows[row].Cells[col].Value = "S";
+                }
+                else if (m.isTreasure(result.getSolution().getPointList()[i].Item1, result.getSolution().getPointList()[i].Item2))
+                {
+                    dataGridViewMap.Rows[row].Cells[col].Value = "T";
+                }
+                else
+                {
+                    dataGridViewMap.Rows[row].Cells[col].Value = "";
+                }
             }
         }
 
         private void changeWarnaDfs(Dfs result)
         {
+            Map m = new Map();
+            m.makeMap(textFilename.Text);
             for (int i = 0; i < result.getSolution().getPointList().Length; i++)
             {
                 int row = result.getSolution().getPointList()[i].Item1;
@@ -94,7 +109,18 @@ namespace ckeris
                 dataGridViewMap.Rows[row].Cells[col].Style.ForeColor = Color.White;
                 dataGridViewMap.Rows[row].Cells[col].Value = "X";
                 Thread.Sleep(500);
-                dataGridViewMap.Rows[row].Cells[col].Value = "";
+                if (m.isStart(result.getSolution().getPointList()[i].Item1, result.getSolution().getPointList()[i].Item2))
+                {
+                    dataGridViewMap.Rows[row].Cells[col].Value = "S";
+                }
+                else if (m.isTreasure(result.getSolution().getPointList()[i].Item1, result.getSolution().getPointList()[i].Item2))
+                {
+                    dataGridViewMap.Rows[row].Cells[col].Value = "T";
+                }
+                else
+                {
+                    dataGridViewMap.Rows[row].Cells[col].Value = "";
+                }
             }
 
             
