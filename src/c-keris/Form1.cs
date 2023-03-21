@@ -107,7 +107,8 @@ namespace ckeris
                 if (currentMethod == "BFS")
                 {
                     Bfs result = new Bfs(textFilename.Text);
-                    labelNotif.Text = "Path: " + result.getSolution().getPointList().Length.ToString();
+                    result.bfsSearch();
+                    labelNotif.Text = "Path: " + result.getCheckedPointCount().ToString();
                     for (int i = 0; i < result.getSolution().getPointList().Length; i++)
                     {
                         int row = result.getSolution().getPointList()[i].Item1;
@@ -122,6 +123,10 @@ namespace ckeris
                     Dfs result = new Dfs(textFilename.Text);
                     
                 }
+                if (currentMethod == "TSP")
+                {
+
+                }
             }
         }
 
@@ -133,6 +138,11 @@ namespace ckeris
         private void buttonDFS_CheckedChanged(object sender, EventArgs e)
         {
             currentMethod = "DFS";
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            currentMethod = "TSP";
         }
     }
 }

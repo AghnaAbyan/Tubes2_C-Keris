@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelJudul = new System.Windows.Forms.Label();
             this.filenameLabel = new System.Windows.Forms.Label();
             this.textFilename = new System.Windows.Forms.TextBox();
@@ -40,6 +40,7 @@
             this.initial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonBFS = new System.Windows.Forms.RadioButton();
             this.buttonDFS = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMap)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +73,7 @@
             // 
             // buttonStart
             // 
-            this.buttonStart.Location = new System.Drawing.Point(43, 277);
+            this.buttonStart.Location = new System.Drawing.Point(47, 301);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(84, 37);
             this.buttonStart.TabIndex = 3;
@@ -112,9 +113,9 @@
             this.dataGridViewMap.ReadOnly = true;
             this.dataGridViewMap.RowHeadersVisible = false;
             this.dataGridViewMap.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewMap.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewMap.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewMap.RowTemplate.Height = 20;
             this.dataGridViewMap.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridViewMap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
@@ -133,8 +134,8 @@
             // initial
             // 
             this.initial.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.initial.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.initial.DefaultCellStyle = dataGridViewCellStyle11;
             this.initial.HeaderText = "initial";
             this.initial.MinimumWidth = 100;
             this.initial.Name = "initial";
@@ -164,11 +165,24 @@
             this.buttonDFS.UseVisualStyleBackColor = true;
             this.buttonDFS.CheckedChanged += new System.EventHandler(this.buttonDFS_CheckedChanged);
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(47, 251);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(64, 24);
+            this.radioButton1.TabIndex = 8;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "TSP";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(928, 568);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.buttonDFS);
             this.Controls.Add(this.buttonBFS);
             this.Controls.Add(this.labelNotif);
@@ -199,6 +213,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn initial;
         private System.Windows.Forms.RadioButton buttonBFS;
         private System.Windows.Forms.RadioButton buttonDFS;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
 
