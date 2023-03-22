@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelJudul = new System.Windows.Forms.Label();
             this.filenameLabel = new System.Windows.Forms.Label();
             this.buttonStart = new System.Windows.Forms.Button();
             this.labelMap = new System.Windows.Forms.Label();
             this.dataGridViewMap = new System.Windows.Forms.DataGridView();
+            this.initial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelNotif = new System.Windows.Forms.Label();
             this.buttonBFS = new System.Windows.Forms.RadioButton();
             this.buttonDFS = new System.Windows.Forms.RadioButton();
@@ -52,7 +53,6 @@
             this.labelSolution = new System.Windows.Forms.Label();
             this.textBoxSolution = new System.Windows.Forms.TextBox();
             this.pictureBoxMrKrab = new System.Windows.Forms.PictureBox();
-            this.initial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textFilename = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMrKrab)).BeginInit();
@@ -109,11 +109,11 @@
             this.dataGridViewMap.AllowUserToDeleteRows = false;
             this.dataGridViewMap.AllowUserToResizeColumns = false;
             this.dataGridViewMap.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridViewMap.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewMap.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewMap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridViewMap.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridViewMap.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -124,14 +124,14 @@
             this.dataGridViewMap.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.initial});
             this.dataGridViewMap.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewMap.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewMap.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewMap.GridColor = System.Drawing.Color.Black;
             this.dataGridViewMap.Location = new System.Drawing.Point(345, 170);
             this.dataGridViewMap.MultiSelect = false;
@@ -139,21 +139,31 @@
             this.dataGridViewMap.ReadOnly = true;
             this.dataGridViewMap.RowHeadersVisible = false;
             this.dataGridViewMap.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewMap.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewMap.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewMap.RowTemplate.Height = 20;
             this.dataGridViewMap.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridViewMap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridViewMap.Size = new System.Drawing.Size(427, 276);
+            this.dataGridViewMap.Size = new System.Drawing.Size(427, 389);
             this.dataGridViewMap.TabIndex = 0;
             this.dataGridViewMap.GridColorChanged += new System.EventHandler(this.buttonStart_Click);
+            // 
+            // initial
+            // 
+            this.initial.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.initial.DefaultCellStyle = dataGridViewCellStyle10;
+            this.initial.HeaderText = "initial";
+            this.initial.MinimumWidth = 100;
+            this.initial.Name = "initial";
+            this.initial.ReadOnly = true;
             // 
             // labelNotif
             // 
             this.labelNotif.AutoSize = true;
             this.labelNotif.Font = new System.Drawing.Font("Tw Cen MT", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNotif.Location = new System.Drawing.Point(43, 456);
+            this.labelNotif.Location = new System.Drawing.Point(43, 536);
             this.labelNotif.Name = "labelNotif";
             this.labelNotif.Size = new System.Drawing.Size(0, 23);
             this.labelNotif.TabIndex = 5;
@@ -296,16 +306,6 @@
             this.pictureBoxMrKrab.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxMrKrab.TabIndex = 0;
             this.pictureBoxMrKrab.TabStop = false;
-            // 
-            // initial
-            // 
-            this.initial.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.initial.DefaultCellStyle = dataGridViewCellStyle2;
-            this.initial.HeaderText = "initial";
-            this.initial.MinimumWidth = 100;
-            this.initial.Name = "initial";
-            this.initial.ReadOnly = true;
             // 
             // textFilename
             // 

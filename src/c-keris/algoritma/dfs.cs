@@ -189,7 +189,7 @@ namespace ckeris.algoritma
                     addSearch(left.Item1, left.Item2, "L", point);
                     addSearch(down.Item1, down.Item2, "D", point);
                     addSearch(right.Item1, right.Item2, "R", point);
-                    insertChecked(point);
+                    //insertChecked(point);
                 }
                 insertChecked(point);
             }
@@ -234,7 +234,7 @@ namespace ckeris.algoritma
                     addSearch(left.Item1, left.Item2, "L", point);
                     addSearch(down.Item1, down.Item2, "D", point);
                     addSearch(right.Item1, right.Item2, "R", point);
-                    insertChecked(point);
+                    //insertChecked(point);
                 }
                 insertChecked(point);
             }
