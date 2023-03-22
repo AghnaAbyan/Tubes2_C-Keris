@@ -152,6 +152,7 @@ namespace ckeris
             // Loading map
             if (textFilename.Text != "")
             {
+                bool filenotfound = false;
                 Map m = new Map();
                 try
                 {
@@ -160,6 +161,7 @@ namespace ckeris
                 catch (FileNotFoundException er)
                 {
                     labelNotif.Text = "File tidak ditemukan!";
+                    filenotfound = true;
                 }
                 dataGridViewMap.ColumnCount = m.getN();
 
@@ -169,7 +171,10 @@ namespace ckeris
                 }
                 else {
                     //dataGridViewMap.Size = new System.Drawing.Size(22 * m.getM(), 22 * m.getN());
-
+                    if (!filenotfound)
+                    {
+                        labelNotif.Text = "";
+                    }
                     for (int i = 0; i < m.getM(); i++)
                     {
                         string[] row = new string[m.getN()];
