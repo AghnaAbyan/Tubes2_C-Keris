@@ -11,6 +11,8 @@ Breadth First Search (BFS) dan Depth First Search (DFS) pada suatu masalah, dala
 - [*Requirement* Program](#req)
 - [Langkah Meng-*compile* Program](#compile)
 - [Cara Menggunakan Program](#penggunaan)
+- [*Progress*](#progress)
+- [Lampiran](#lampiran)
 - [*Authors*](#author)
 
 ## Deskripsi Singkat <a name="deskripsi"></a>
@@ -26,8 +28,11 @@ Beberapa hal yang harus dimiliki pengguna supaya program dapat dijalankan:
 ## Langkah Meng-*compile* Program <a name="compile"></a>
 1) Buka Visual Studio pada *platform* yang anda gunakan
 2) Pilih *Open a project or solution* pada layar utama
-3) Pilih folder repository yang sudah di-*clone*
-4) Visual Studio sudah terbuka dengan folder repository. Klik "Start" pada bagian atas layar
+3) Pilih *file* bernama ```c-keris.sln``` dengan *directory* pada folder sebagai berikut:
+```
+Tubes2_C-Keris\src\c-keris\c-keris.sln
+```
+4) Visual Studio sudah terbuka dengan *file* ```c-keris.sln```. Klik "Start" pada bagian atas layar
 
 ## Cara Menggunakan Program <a name="penggunaan"></a>
 1) Program akan menampilkan halaman utama.
@@ -37,7 +42,7 @@ Beberapa hal yang harus dimiliki pengguna supaya program dapat dijalankan:
 <img width="300" alt="image" src="https://user-images.githubusercontent.com/110531746/226810804-574b776d-6152-4f97-8d81-f5b505c8efb1.png">
 
 **Catatan** : Semua *file* berisikan *map* yang ingin dites terletak pada folder "test". Jika pengguna ingin menambahkan *file map* miliknya sendiri, silahkan
-buat *file* nya sendiri dalam bentuk .txt, lalu taruh file tersebut pada folder "test".
+buat *file* nya sendiri dalam bentuk .txt, lalu taruh *file* tersebut pada folder "test".
 
 3) Pengguna dapat mem-visualisasikan peta dengan menekan tombol "VISUALIZE".
 <img width="464" alt="image" src="https://user-images.githubusercontent.com/110531746/226811534-3aa77513-862e-4e24-92b4-3fcb942dd903.png">
@@ -53,6 +58,16 @@ buat *file* nya sendiri dalam bentuk .txt, lalu taruh file tersebut pada folder 
 7) Selesai! pengguna dapat keluar dengan menekan tombol silang (X) diatas kanan layar.
 <img width="466" alt="image" src="https://user-images.githubusercontent.com/110531746/226811731-02a9df11-d306-433c-892a-49a6e07838c7.png">
 
+## *Progress* <a name="progress"></a>
+- [ ] Laporan
+- [x] Implementasi program
+- [x] (BONUS) Implementasi tampilan *progress* pencarian solusi
+- [x] (BONUS) Implementasi *toggle* persoalan TSP
+- [x] (BONUS) Membuat video demonstrasi program
+
+## Lampiran <a name="lampiran"></a>
+- Repository GitHub : https://github.com/AghnaAbyan/Tubes2_C-Keris
+- Video demonstrasi program : https://youtu.be/Np66b5vd0XI
 
 ## *Authors* <a name="author"></a>
 <table>
