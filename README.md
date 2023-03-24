@@ -59,7 +59,7 @@ buat *file* nya sendiri dalam bentuk .txt, lalu taruh *file* tersebut pada folde
 <img width="466" alt="image" src="https://user-images.githubusercontent.com/110531746/226811731-02a9df11-d306-433c-892a-49a6e07838c7.png">
 
 ## *Progress* <a name="progress"></a>
-- [ ] Laporan
+- [x] Laporan
 - [x] Implementasi program
 - [x] (BONUS) Implementasi tampilan *progress* pencarian solusi
 - [x] (BONUS) Implementasi *toggle* persoalan TSP
